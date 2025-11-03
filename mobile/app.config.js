@@ -1,0 +1,60 @@
+// Load environment variables from .env file
+import 'dotenv/config';
+
+export default {
+  expo: {
+    name: "Xontel HR Chat",
+    slug: "xontel-hr-chat",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/icon.png",
+    userInterfaceStyle: "light",
+    newArchEnabled: true,
+    splash: {
+      image: "./assets/splash-icon.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff"
+    },
+    ios: {
+      bundleIdentifier: "com.minasamy.xontelhrchat",
+      supportsTablet: true,
+      infoPlist: {
+        NSPhotoLibraryUsageDescription: "This app needs access to your photo library to attach images to messages.",
+        NSPhotoLibraryAddUsageDescription: "This app needs access to save photos to your photo library.",
+        NSCameraUsageDescription: "This app needs access to your camera to take photos for messages."
+      }
+    },
+    android: {
+      package: "com.minasamy.xontelhrchat",
+      adaptiveIcon: {
+        foregroundImage: "./assets/adaptive-icon.png",
+        backgroundColor: "#ffffff"
+      },
+      edgeToEdgeEnabled: true,
+      permissions: [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES"
+      ]
+    },
+    web: {
+      favicon: "./assets/favicon.png"
+    },
+    extra: {
+      // These will be available via Constants.expoConfig.extra
+      socketUrl: process.env.EXPO_PUBLIC_SOCKET_URL,
+      apiUrl: process.env.EXPO_PUBLIC_API_URL,
+    },
+    plugins: [
+      [
+        "expo-image-picker",
+        {
+          photosPermission: "The app accesses your photos to let you share them with HR.",
+          cameraPermission: "The app accesses your camera to let you take photos for messages."
+        }
+      ]
+    ]
+  }
+};
+
