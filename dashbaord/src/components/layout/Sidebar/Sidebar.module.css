@@ -1,0 +1,84 @@
+/* Sidebar Module Styles */
+
+/* Base sidebar styles - using :global() to make classes available globally */
+:global(.sidebar-menu) {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
+  border-right: 1px solid rgba(229, 231, 235, 0.8);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  z-index: 30;
+}
+
+/* Base backdrop styles */
+:global(.sidebar-backdrop) {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  background-color: rgba(17, 24, 39, 0.5);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mobile and tablet styles */
+@media (max-width: 1023px) {
+  /* Sidebar hidden by default on mobile/tablet */
+  :global(.sidebar-menu) {
+    transform: translateX(-100%) !important;
+    max-width: 85vw;
+    z-index: 1050 !important; /* Above header (z-40) */
+  }
+  
+  /* Sidebar visible when menu is open */
+  :global(body.mobile-menu-open .sidebar-menu) {
+    transform: translateX(0) !important;
+    z-index: 1050 !important; /* Above header (z-40) */
+  }
+
+  /* Backdrop visible when menu is open */
+  :global(body.mobile-menu-open .sidebar-backdrop) {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 1040 !important; /* Below sidebar but above header */
+  }
+
+  /* Tablet adjustments */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    :global(.sidebar-menu) {
+      max-width: 280px;
+    }
+  }
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  :global(.sidebar-menu) {
+    transform: translateX(0) !important;
+    z-index: 50;
+    box-shadow: none;
+  }
+  
+  :global(.sidebar-backdrop) {
+    display: none !important;
+  }
+}
+

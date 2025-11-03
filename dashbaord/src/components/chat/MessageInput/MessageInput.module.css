@@ -1,0 +1,30 @@
+/* MessageInput Module Styles */
+/* Additional custom styles can be added here if needed */
+
+/* Hide scrollbar for textarea */
+.messageInput::-webkit-scrollbar {
+  display: none;
+}
+
+.messageInput {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-size: 14px !important;
+}
+
+/* Remove blue browser default outline on focus - keep the black ring from Tailwind */
+.messageInput:focus {
+  outline: none !important;
+}
+
+/* Ensure browser default blue outline doesn't show */
+.messageInput:focus-visible {
+  outline: none !important;
+}
+
+/* Placeholder styling - smaller font size */
+.messageInput::placeholder {
+  font-size: 12px;
+  color: #9ca3af;
+}
+

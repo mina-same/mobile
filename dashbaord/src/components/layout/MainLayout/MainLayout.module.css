@@ -1,0 +1,18 @@
+/* MainLayout Module Styles */
+/* Additional custom styles can be added here if needed */
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1023px) {
+  /* On mobile and tablet, main content has no left margin */
+  main {
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* On desktop, main content has left margin for sidebar */
+  main {
+    margin-left: var(--sidebar-width) !important;
+  }
+}
+

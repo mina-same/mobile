@@ -1,0 +1,103 @@
+/* Header Module Styles */
+/* Additional custom styles can be added here if needed */
+
+.header {
+  background: linear-gradient(to right, #ffffff 0%, #f9fafb 100%);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1023px) {
+  /* On mobile and tablet, header has no left margin */
+  .header {
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* On desktop, header has left margin for sidebar */
+  .header {
+    margin-left: var(--sidebar-width) !important;
+  }
+}
+
+.logoContainer {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #111827 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+.mobileTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.menuButton {
+  padding: 0.5rem;
+  color: #4b5563;
+  transition: all 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+.menuButton:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.menuButton:active {
+  transform: scale(0.95);
+}
+
+.userProfile {
+  padding: 0.5rem 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.userProfile:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+

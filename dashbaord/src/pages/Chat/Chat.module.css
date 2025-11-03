@@ -1,0 +1,109 @@
+/* Chat Page Styles */
+
+.chat-container {
+  /* Ensure proper height on mobile */
+  height: calc(100vh - 280px) !important;
+  min-height: 400px !important;
+}
+
+.chat-layout {
+  position: relative;
+}
+
+/* Employee List Sidebar */
+.employee-list-sidebar {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+}
+
+/* Desktop styles - Side by side layout */
+@media (min-width: 1024px) {
+  .employee-list-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    display: block !important;
+  }
+  
+  .chat-window {
+    flex: 1;
+    min-width: 0;
+    display: flex !important;
+  }
+}
+
+/* Conversation Icons (Mobile) */
+.conversation-icons {
+  width: 70px;
+  flex-shrink: 0;
+  min-width: 70px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.conversation-icons::-webkit-scrollbar {
+  width: 4px;
+}
+
+.conversation-icons::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.conversation-icons::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+
+/* Mobile styles */
+@media (max-width: 1023px) {
+  .chat-container {
+    height: calc(100vh - 180px) !important;
+    min-height: calc(100vh - 180px) !important;
+    max-height: calc(100vh - 180px) !important;
+  }
+  
+  .chat-layout {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .employee-list-sidebar {
+    display: none !important; /* Hide desktop sidebar on mobile */
+  }
+  
+  .chat-window {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Hide chat window on mobile when no employee selected */
+  .chat-window.mobile-hidden {
+    display: none !important;
+  }
+  
+  /* Better touch targets for icons */
+  .conversation-icons button {
+    min-height: 70px;
+    padding: 12px 8px;
+  }
+  
+  /* Smooth scrolling */
+  .conversation-icons,
+  .chat-window > div {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Desktop - Hide mobile features */
+@media (min-width: 1024px) {
+  .conversation-icons {
+    display: none !important;
+  }
+}
+
+
